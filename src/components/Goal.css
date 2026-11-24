@@ -1,7 +1,6 @@
 .card {
     width: 300px;
-    min-height: 170px;
-
+    
     background: #171a15;
     border: 1px solid #2a2e26;
     border-radius: 12px;
@@ -10,12 +9,19 @@
 
     color: #f2efe6;
 
-    position: relative;
+    transition: 
+        max-height 300ms ease,
+        transform 200ms ease;
 
-    transition:
-        height 300ms ease,
-        transform 200ms ease,
-        border-color 200ms ease;
+    overflow: hidden;
+}
+
+.card {
+    max-height: 170px;
+}
+
+.card.expanded {
+    max-height: 500px;
 }
 
 .card:hover {
@@ -74,7 +80,7 @@
 
     border-radius: inherit;
 
-    transition: width 500ms ease;
+    transition: width 1s ease;
 }
 .progress-text {
     margin-top: 7px;
@@ -121,13 +127,6 @@
     background: #1d211b;
 }
 
-.card.expanded {
-    min-height: 360px;
-    transition:
-        height 300ms ease,
-        transform 200ms ease,
-        border-color 200ms ease;
-}
 
 .editor {
     margin-top: 20px;

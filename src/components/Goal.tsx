@@ -37,33 +37,33 @@ function Goal(){
                     <div className="progress-text">
                         {current} / {target} hours
                     </div>
-                    {expanded && (
-                        <div className="editor">
-                            <label>
-                                Current hours
-                                <input
-                                    type="number"
-                                    value={current}
-                                    onChange={(e) =>
-                                        setCurrent(Number(e.target.value))
-                                    }
-                                />
-                            </label>
-                            <label>
-                                Target hours
-                                <input
-                                    type="number"
-                                    value={target}
-                                    onChange={(e) =>
-                                        setTarget(Number(e.target.value))
-                                    }
-                                />
-                            </label>
-                            <button onClick={() => setExpanded(false)}>
-                                Save
-                            </button>
-                        </div>
-                    )}
+                    <div className={`editor ${expanded ? 'editor-open' : ''}`}>
+                        <label>
+                            Current hours
+                            <input
+                                type="number"
+                                value={current}
+                                onChange={(e) =>
+                                    setCurrent(Number(e.target.value))
+                                }
+                            />
+                        </label>
+
+                        <label>
+                            Target hours
+                            <input
+                                type="number"
+                                value={target}
+                                onChange={(e) =>
+                                    setTarget(Number(e.target.value))
+                                }
+                            />
+                        </label>
+
+                        <button onClick={() => setExpanded(false)}>
+                            Save
+                        </button>
+                    </div>
             </div>
 
             <div className="edit">
