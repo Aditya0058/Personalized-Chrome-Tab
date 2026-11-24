@@ -1,16 +1,23 @@
 :root {
-  --text: #f8fafc;
-  --text-h: #7D8597;
-  --bg: #0B0F14;
-  --border: #5C677D;
-  --card-bg: #111827;
-  --card-hover: #18202b;
+  --bg: #0b0c0a;
+  --panel: #121410;
+  --card: #171a15;
 
-  
+  --line: #2a2e26;
 
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
+  --text: #f2efe6;
+  --muted: #a3a497;
+  --faint: #6b6d62;
+
+  --pink: #ff6fb5;
+  --yellow: #ffd21f;
+  --green: #3faa52;
+  --blue: #2f7fd0;
+
+  --font-display: "Pixelify Sans", monospace;
+  --font-serif: "Instrument Serif", serif;
+  --font-body: "IBM Plex Sans", sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
 
   font: 18px/145% var(--sans);
   letter-spacing: 0.18px;
