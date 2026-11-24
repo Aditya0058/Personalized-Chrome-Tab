@@ -24,46 +24,48 @@ function Goal(){
 
       <>
         <div className={`card ${expanded ? 'expanded' : ''}`}>
-            <div className="card-thumbnail">
-                <img src="src/assets/goal-thumbnail.png" alt="" />
-            </div >  
-            <div className="card-content"> 
-                    <div className="percentage">
-                        {percentage}%
-                    </div>
-                    <div className="progress-bar">
-                        <div className="progress-fill" style={{width : `${percentage}%`}}></div> 
-                    </div>
-                    <div className="progress-text">
-                        {current} / {target} hours
-                    </div>
-                    <div className={`editor ${expanded ? 'editor-open' : ''}`}>
-                        <label>
-                            Current hours
-                            <input
-                                type="number"
-                                value={current}
-                                onChange={(e) =>
-                                    setCurrent(Number(e.target.value))
-                                }
-                            />
-                        </label>
+            <div className="card-visible">
+                <div className="card-thumbnail">
+                    <img src="src/assets/goal-thumbnail.png" alt="" />
+                </div >  
+                <div className="card-content"> 
+                        <div className="percentage">
+                            {percentage}%
+                        </div>
+                        <div className="progress-bar">
+                            <div className="progress-fill" style={{width : `${percentage}%`}}></div> 
+                        </div>
+                        <div className="progress-text">
+                            {current} / {target} hours
+                        </div>
+                </div>
+            </div>
+            <div className={`editor ${expanded ? 'editor-open' : ''}`}>
+                <label>
+                    Current hours
+                    <input
+                        type="number"
+                        value={current}
+                        onChange={(e) =>
+                            setCurrent(Number(e.target.value))
+                        }
+                    />
+                </label>
 
-                        <label>
-                            Target hours
-                            <input
-                                type="number"
-                                value={target}
-                                onChange={(e) =>
-                                    setTarget(Number(e.target.value))
-                                }
-                            />
-                        </label>
+                <label>
+                    Target hours
+                    <input
+                        type="number"
+                        value={target}
+                        onChange={(e) =>
+                            setTarget(Number(e.target.value))
+                        }
+                    />
+                </label>
 
-                        <button onClick={() => setExpanded(false)}>
-                            Save
-                        </button>
-                    </div>
+                <button onClick={() => setExpanded(false)}>
+                    Save
+                </button>
             </div>
 
             <div className="edit">
