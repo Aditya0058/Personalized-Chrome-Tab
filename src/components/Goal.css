@@ -1,7 +1,7 @@
 .goal-card{
     background-color: var(--card-bg);
-    width: 200px;
-    height: 300px;
+    width: 250px;
+    height: 100px; 
 }
 
 .goal-card:hover{
