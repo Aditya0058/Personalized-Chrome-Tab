@@ -1,0 +1,9 @@
+.goal-card{
+    background-color: var(--card-bg);
+    width: 200px;
+    height: 300px;
+}
+
+.goal-card:hover{
+    background: var(--card-hover);
+}
