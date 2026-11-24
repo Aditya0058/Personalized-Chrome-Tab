@@ -1,6 +1,8 @@
 
-import './App.css'
-import Goal from './components/Goal'
+import './App.css';
+import Goal from './components/Goal';
+import Greeting from './components/Greeting';
+
 
 function App() {
   
@@ -11,6 +13,9 @@ function App() {
           <div className="right-top">
             <Goal /> 
           </div> 
+          <div className="greeting-wrapper">
+            <Greeting />
+          </div>
       </div>
     </>
   )
