@@ -1,32 +1,39 @@
 import { useEffect, useRef } from 'react';
+import { sampleText } from '../canvas/sampleText';
+import { PixelTextRenderer } from '../canvas/PixelTextRenderer';
 import './Greeting.css';
+
+const WIDTH = 250;
+const HEIGHT = 100;
 
 function Greeting(){
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  
+
 
   useEffect(()=> {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    const ctx = canvas.getContext('2d'); 
-    if (!ctx) return;
-    
-  
-    ctx.fillStyle = '#4A90E2';
-    ctx.fillRect(0, 0, 250, 100);
 
-    ctx.fillStyle = '#ffffff';
-    ctx.font = '16px sans-serif';
-    ctx.textAlign = 'center';
-    ctx.textBaseline = 'middle';
-    ctx.fillText('Hi there', 125, 50);
+    const pixels = sampleText('Hi there', {
+      width: WIDTH,
+      height: HEIGHT,
+      fontSize: 40,
+      fontWeight: 'bold',
+      threshold: 128,
+      step: 2,
+
+    });
+    const renderer = new PixelTextRenderer(canvas, pixels);
+    renderer.start();
+
+    return () => renderer.stop();
 
   }, []);
 
-  
+   
 
-  return (
+  return (  
     <canvas
       ref={canvasRef}
       width={250}
