@@ -10,6 +10,7 @@ export function sampleText(text: string, opts: SampleOptions): Pixel[] {
     threshold = 128,
     color = '#ffffff',
     step = 2,
+    
   } = opts;
 
   const off = document.createElement('canvas');
@@ -43,6 +44,10 @@ export function sampleText(text: string, opts: SampleOptions): Pixel[] {
           homeY: y,
           color: `rgb(${data[i]},${data[i + 1]},${data[i + 2]})`,
           size: step,
+          shape: 'square',
+          shapeSpeed: 0.3 + Math.sin(x * 0.05) * 0.1,  // wave pattern
+          shapePhase:  0,
+          shapeSet: ['square', 'circle', 'cross', 'diamond', 'rect'],
         });
       }
     }

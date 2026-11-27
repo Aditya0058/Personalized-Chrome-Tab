@@ -5,10 +5,14 @@ export interface Pixel {
   homeY: number;
   color: string;
   size: number;
+  shape: Shape;        // current shape being drawn
+  shapePhase: number;  // 0..1 progress through the current shape transition
+  shapeSpeed: number;  // how fast this pixel morphs (unique per pixel)
   vx?: number;       
   vy?: number;
+  shapeSet: Shape[];
 }
-
+type Shape = 'square' | 'circle' | 'cross' | 'diamond' | 'rect';
 export interface SampleOptions {
   width: number;
   height: number;
