@@ -43,7 +43,7 @@ export class PixelTextRenderer {
   private update(_dt: number) {
     for (const p of this.pixels) {
     // Advance the morph cycle
-    p.shapePhase += p.shapeSpeed * _dt;
+    p.shapePhase += p.shapeSpeed * _dt; 
 
     if (p.shapePhase >= 1) {
       p.shapePhase = 0;

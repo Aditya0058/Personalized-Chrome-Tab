@@ -21,7 +21,7 @@ function Greeting(){
       fontSize: 100,
       fontWeight: 'bold',
       threshold: 128,
-      step: 2,
+      step: 7,
 
     });
     const renderer = new PixelTextRenderer(canvas, pixels);

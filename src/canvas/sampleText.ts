@@ -9,7 +9,7 @@ export function sampleText(text: string, opts: SampleOptions): Pixel[] {
     fontWeight = 'bold',
     threshold = 128,
     color = '#ffffff',
-    step = 2,
+    step = 4,
     
   } = opts;
 
@@ -29,8 +29,8 @@ export function sampleText(text: string, opts: SampleOptions): Pixel[] {
   const { data } = ctx.getImageData(0, 0, width, height);
 
    const pixels: Pixel[] = [];
-   for (let y = 0; y < height; y+=4) {
-    for (let x = 0; x < width; x+=4) {
+   for (let y = 0; y < height; y+=8) {
+    for (let x = 0; x < width; x+=8) {
         //  here i is index (positon of pixels which we'll be using to find the data of that pixel)
       const i = (y * width + x) * 4;
         // alpha is opacity and we have opacity value at i+3 for each pixel (R, G, B, A)
@@ -47,6 +47,7 @@ export function sampleText(text: string, opts: SampleOptions): Pixel[] {
           shape: 'square',
           shapeSpeed: 0.3 + Math.sin(x * 0.05) * 0.1,  // wave pattern
           shapePhase:  0,
+          // shapeSet: ['cross'],
           shapeSet: ['square', 'circle', 'cross', 'diamond', 'rect'],
         });
       }
