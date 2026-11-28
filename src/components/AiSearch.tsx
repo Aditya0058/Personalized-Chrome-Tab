@@ -7,8 +7,11 @@ function AiSearch() {
   return (  
     <>
       <div className="container">
-        <div className="input-section"></div>
-        <div className="containesr-bottom">
+        <div className="input-section">
+            {/* <input type="text" placeholder='Ask anything' id="ask-input" /> */}
+            <textarea placeholder='Ask anything' id="ask-input"></textarea>
+        </div>
+        <div className="container-bottom">
             <div className="selector-btn"><button>ChatGPT</button></div>
             <div className="search-btn"><button>GO</button></div>
         </div>
