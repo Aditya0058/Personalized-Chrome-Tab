@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { sampleText } from '../canvas/sampleText';
 import { PixelTextRenderer } from '../canvas/PixelTextRenderer';
+import { useGreeting } from './lib/useGreeting';
 import './Greeting.css';
 
 const WIDTH = 700;
@@ -40,28 +41,30 @@ const renderer = new PixelTextRenderer(canvas, pixels, {
 
 
       
-        const handleMove = (e: React.MouseEvent<HTMLCanvasElement>) => {
-          const canvas = canvasRef.current;
-          const renderer = rendererRef.current;
-          if (!canvas || !renderer) return;
-      
-          // ⚠️ Convert viewport coords → canvas-local pixels
-          const rect = canvas.getBoundingClientRect();
-          const scaleX = canvas.width / rect.width;
-          const scaleY = canvas.height / rect.height;
-      
-          renderer.setMouse(
-            (e.clientX - rect.left) * scaleX,
-            (e.clientY - rect.top) * scaleY
-          );
-        };
-      
-        const handleLeave = () => rendererRef.current?.setMouse(null, null);
+    const handleMove = (e: React.MouseEvent<HTMLCanvasElement>) => {
+      const canvas = canvasRef.current;
+      const renderer = rendererRef.current;
+      if (!canvas || !renderer) return;
+  
+      // ⚠️ Convert viewport coords → canvas-local pixels
+      const rect = canvas.getBoundingClientRect();
+      const scaleX = canvas.width / rect.width;
+      const scaleY = canvas.height / rect.height;
+  
+      renderer.setMouse(
+        (e.clientX - rect.left) * scaleX,
+        (e.clientY - rect.top) * scaleY
+      );
+    };
+  
+    const handleLeave = () => rendererRef.current?.setMouse(null, null);
+
+    const greeting = useGreeting();
 
   return (  
     <>
 
-    <h2>Good Morning</h2>
+    <h2>{greeting.text}{greeting.punct}{' '}</h2>
     <canvas
       ref={canvasRef}
       width={WIDTH}
