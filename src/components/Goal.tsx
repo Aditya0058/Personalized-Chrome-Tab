@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useLocalStorageNumber } from './lib/useLocalStorageNumber';
 import './Goal.css'
 // import React from 'react';
 
@@ -14,10 +15,11 @@ function Goal(){
 
     const [expanded, setExpanded] = useState(false);
 
-    const [current, setCurrent] = useState(125);
-    const [target, setTarget] = useState(350);
+    const [current, setCurrent] = useLocalStorageNumber('goal:current', 125)
+    const [target, setTarget]   = useLocalStorageNumber('goal:target',  350);
 
-    const percentage = Math.round((current / target) * 100);
+    const percentage =
+    target > 0 ? Math.min(100, Math.round((current / target) * 100)) : 0;
 
     
     return (
@@ -46,8 +48,7 @@ function Goal(){
                     <input
                         type="number"
                         value={current}
-                        onChange={(e) =>
-                            setCurrent(Number(e.target.value))
+                        onChange={(e) => setCurrent(Number(e.target.value))
                         }
                     />
                 </label>
@@ -57,8 +58,7 @@ function Goal(){
                     <input
                         type="number"
                         value={target}
-                        onChange={(e) =>
-                            setTarget(Number(e.target.value))
+                        onChange={(e) => setTarget(Number(e.target.value))
                         }
                     />
                 </label>

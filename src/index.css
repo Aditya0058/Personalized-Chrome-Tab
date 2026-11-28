@@ -7,7 +7,8 @@
   src: url('src/assets/fonts/Handlee-Regular.ttf') format('truetype'),
 }
 :root {
-  --bg: #0b0c0a;
+  /* --bg: #0b0c0a; */
+  --bg: #000000;
   --panel: #121410;
   --card: #171a15;
 
