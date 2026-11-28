@@ -8,6 +8,7 @@ const HEIGHT = 100;
 
 function Greeting(){
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const rendererRef = useRef<PixelTextRenderer | null>(null);
 
 
   useEffect(()=> {
@@ -24,14 +25,38 @@ function Greeting(){
       step: 5,
 
     });
-    const renderer = new PixelTextRenderer(canvas, pixels);
+//     const renderer = new PixelTextRenderer(canvas, pixels);
+const renderer = new PixelTextRenderer(canvas, pixels, {
+  hoverRadius: 30,
+  hoverReturnSpeed: 6,
+});
     renderer.start();
+    rendererRef.current = renderer;
+  return () => {
+        renderer.stop();
+        rendererRef.current = null;
+      };
+    }, []);
 
-    return () => renderer.stop();
 
-  }, []);
-
-   
+      
+        const handleMove = (e: React.MouseEvent<HTMLCanvasElement>) => {
+          const canvas = canvasRef.current;
+          const renderer = rendererRef.current;
+          if (!canvas || !renderer) return;
+      
+          // ⚠️ Convert viewport coords → canvas-local pixels
+          const rect = canvas.getBoundingClientRect();
+          const scaleX = canvas.width / rect.width;
+          const scaleY = canvas.height / rect.height;
+      
+          renderer.setMouse(
+            (e.clientX - rect.left) * scaleX,
+            (e.clientY - rect.top) * scaleY
+          );
+        };
+      
+        const handleLeave = () => rendererRef.current?.setMouse(null, null);
 
   return (  
     <>
@@ -43,6 +68,8 @@ function Greeting(){
       height={HEIGHT} 
       // style={{ border: '1px solid #ccc', display: 'block' }}
       style={{ display: 'block' }}
+      onMouseMove={handleMove}
+      onMouseLeave={handleLeave}
       className='greeting-canvas'
     >
 

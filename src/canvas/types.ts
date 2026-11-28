@@ -11,6 +11,14 @@ export interface Pixel {
   vx?: number;       
   vy?: number;
   shapeSet: Shape[];
+  r: number;
+  g: number;
+  b: number;
+  baseR: number;   // original color, restored after hover
+  baseG: number;
+  baseB: number;
+
+  hovered: boolean;
 }
 type Shape = 'square' | 'circle' | 'cross' | 'diamond' | 'rect';
 export interface SampleOptions {
@@ -22,4 +30,6 @@ export interface SampleOptions {
   threshold?: number;
   color?: string;
   step?: number; 
+  hoverRadius?: number;   // px, default 30
+  hoverReturnSpeed?: number; // 0..1 per second, default 6
 } 

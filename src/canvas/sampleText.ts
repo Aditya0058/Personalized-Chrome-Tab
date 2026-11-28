@@ -37,6 +37,9 @@ export function sampleText(text: string, opts: SampleOptions): Pixel[] {
       const alpha = data[i + 3];
 
       if (alpha > threshold) {
+        const r = data[i];
+        const g = data[i + 1];
+        const b = data[i + 2];
         pixels.push({ 
           x,
           y,
@@ -50,6 +53,9 @@ export function sampleText(text: string, opts: SampleOptions): Pixel[] {
           shapePhase:  0,
           // shapeSet: ['cross'],
           shapeSet: ['square', 'circle', 'cross', 'diamond',],
+          r, g, b,
+          baseR: r, baseG: g, baseB: b,
+          hovered: false,
         });
       }
     }
