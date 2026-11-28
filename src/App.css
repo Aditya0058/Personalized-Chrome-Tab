@@ -18,3 +18,14 @@
   width: 98vw;
   height: 20vh;
 }
+
+.middle-section{
+  display: flex;
+  height: 80vh;
+  justify-content: center;
+  align-items: center;
+}
+.ai-search{
+  width: 40%;
+  height: 35%;
+}
