@@ -5,7 +5,7 @@ export function sampleText(text: string, opts: SampleOptions): Pixel[] {
     width,
     height,
     fontSize,
-    fontFamily = 'Courier New',
+    fontFamily = 'monospace',
     fontWeight = 'bold',
     threshold = 128,
     color = '#ffffff',

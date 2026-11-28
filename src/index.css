@@ -1,3 +1,11 @@
+@font-face {
+  font-family: 'StyleScript'; 
+  src: url('src/assets/fonts/StyleScript-Regular.ttf') format('truetype'),
+}
+@font-face {
+  font-family: 'Handlee'; 
+  src: url('src/assets/fonts/Handlee-Regular.ttf') format('truetype'),
+}
 :root {
   --bg: #0b0c0a;
   --panel: #121410;

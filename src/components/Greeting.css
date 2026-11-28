@@ -1,3 +1,12 @@
 /* .greeting-canvas{
     margin: 100px;
 } */
+*{
+    margin: 0;
+    padding: 0;
+}
+h2{
+    font-size: 35px;
+    font-family: 'Handlee', 'StyleScript', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+}

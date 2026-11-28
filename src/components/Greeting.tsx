@@ -3,8 +3,8 @@ import { sampleText } from '../canvas/sampleText';
 import { PixelTextRenderer } from '../canvas/PixelTextRenderer';
 import './Greeting.css';
 
-const WIDTH = 1000;
-const HEIGHT = 200;
+const WIDTH = 700;
+const HEIGHT = 100;
 
 function Greeting(){
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -18,7 +18,7 @@ function Greeting(){
     const pixels = sampleText('Aditya Rajput', {
       width: WIDTH,
       height: HEIGHT,
-      fontSize: 100,
+      fontSize: 80,
       fontWeight: 'bold',
       threshold: 128,
       step: 5,
