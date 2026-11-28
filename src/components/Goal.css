@@ -2,18 +2,20 @@
     display: flex;
     gap: 10px;
     align-items: center;
+    max-width: 100%;
 }
 
 .card {
     width: 100%;
     max-height: 140px;
-    background: #171a15;
+    /* background: #171a15; */
+    background: #000000;
     border: 1px solid #2a2e26;
     border-radius: 12px;
 
     padding: 16px;
 
-    color: #f2efe6;
+    color: #ffffff;
 
     transition: 
         max-height 300ms ease,
@@ -24,10 +26,12 @@
 
 .card {
     max-height: 140px;
+    max-width: 100%;
 }
 
 .card.expanded {
     max-height: 500px;
+    max-width: 100%;
 }
 
 .card:hover {
@@ -49,7 +53,7 @@
     width: 100%;
     height: 100%;
 
-    object-fit: contain;
+    /* object-fit: contain; */
 }
 
 
@@ -59,12 +63,13 @@
   flex-direction: column;
   gap: 8px;
   min-width: 0;
+  max-width: 100%;
 }
 .percentage {
-    font-family: "IBM Plex Mono", monospace;
+    font-family: "handlee","IBM Plex Mono", monospace;
     font-size: 24px;
 
-    color: #a3a497;
+    color: #fffffc;
 
     margin: 0 0 8px 0;
 }
@@ -82,7 +87,8 @@
 .progress-fill {
     height: 100%;
 
-    background: #ff6fb5;
+    /* background: #ff6fb5; */
+    background: #fdfdfd;
 
     border-radius: inherit;
 
@@ -91,10 +97,10 @@
 .progress-text {
     margin-top: 7px;
 
-    font-family: "IBM Plex Mono", monospace;
+    font-family: "handlee","IBM Plex Mono", monospace;
 
-    font-size: 11px;
-
+    font-size: 14px;
+    font-weight: 1000;
     color: #6b6d62;
 }
 
@@ -107,6 +113,8 @@
 .edit-btn {
     border: 1px solid #2a2e26;
 
+    max-width: 100%;
+
     background: #121410;
 
     color: #a3a497;
@@ -115,8 +123,8 @@
 
     border-radius: 6px;
 
-    font-family: "IBM Plex Mono", monospace;
-    font-size: 10px;
+    font-family: "handlee","IBM Plex Mono", monospace;
+    font-size: 15px;
 
     cursor: pointer;
 
@@ -128,7 +136,8 @@
 
 .edit-btn:hover {
     color: #f2efe6;
-    border-color: #ff6fb5;
+    /* border-color: #ff6fb5; */
+    border-color: #ffffff;
     background: #1d211b;
 }
 
@@ -150,8 +159,8 @@
 
     gap: 6px;
 
-    font-family: "IBM Plex Mono", monospace;
-    font-size: 10px;
+    font-family: "handlee","IBM Plex Mono", monospace;
+    font-size: 14px;
 
     color: #a3a497;
 }
@@ -183,7 +192,8 @@
 
     border: 1px solid #ff6fb5;
 
-    background: #ff6fb5;
+    /* background: #ff6fb5; */
+    background: #eeeeee;
 
     color: #0b0c0a;
 

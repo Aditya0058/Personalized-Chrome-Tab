@@ -10,11 +10,14 @@ function App() {
   return (  
     <>
       <div className="main">
-          {/* <div className="right-top">
-            <Goal /> 
-          </div>  */}
+          <div className="top-bar"> 
           <div className="greeting-wrapper">
             <Greeting />
+          </div>
+          <div className="goal">
+            <Goal /> 
+          </div> 
+
           </div>
       </div>
     </>

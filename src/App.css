@@ -1,9 +1,20 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
 .main{
   width: 100vw;
   height: 100vh;
 }
 
-.right-top{
-  width: 450px;
-  height: 150px;
+.goal{
+  height: 30px;
+  width: auto;
+}
+.top-bar{
+  display: flex;
+  justify-content: space-between;
+  width: 98vw;
+  height: 20vh;
 }
