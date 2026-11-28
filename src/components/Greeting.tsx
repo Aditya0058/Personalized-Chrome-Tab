@@ -3,8 +3,8 @@ import { sampleText } from '../canvas/sampleText';
 import { PixelTextRenderer } from '../canvas/PixelTextRenderer';
 import './Greeting.css';
 
-const WIDTH = 750;
-const HEIGHT = 300;
+const WIDTH = 1000;
+const HEIGHT = 200;
 
 function Greeting(){
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -15,13 +15,13 @@ function Greeting(){
     if (!canvas) return;
 
 
-    const pixels = sampleText('Hi there', {
+    const pixels = sampleText('Aditya Rajput', {
       width: WIDTH,
       height: HEIGHT,
       fontSize: 100,
       fontWeight: 'bold',
       threshold: 128,
-      step: 7,
+      step: 5,
 
     });
     const renderer = new PixelTextRenderer(canvas, pixels);
@@ -34,15 +34,20 @@ function Greeting(){
    
 
   return (  
+    <>
+
+    <h2>Good Morning</h2>
     <canvas
       ref={canvasRef}
       width={WIDTH}
       height={HEIGHT} 
-      style={{ border: '1px solid #ccc', display: 'block' }}
+      // style={{ border: '1px solid #ccc', display: 'block' }}
+      style={{ display: 'block' }}
       className='greeting-canvas'
     >
 
     </canvas>
+    </>
   );
 };
 

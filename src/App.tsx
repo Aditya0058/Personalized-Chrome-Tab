@@ -10,9 +10,9 @@ function App() {
   return (  
     <>
       <div className="main">
-          <div className="right-top">
+          {/* <div className="right-top">
             <Goal /> 
-          </div> 
+          </div>  */}
           <div className="greeting-wrapper">
             <Greeting />
           </div>
